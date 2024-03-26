@@ -1,5 +1,11 @@
+import LoginSignup from "./pages/LoginSignup";
+
 function App() {
-  return <div className="App">Welcome to the news daily</div>;
+  return (
+    <div className="App">
+      <LoginSignup />
+    </div>
+  );
 }
 
 export default App;
