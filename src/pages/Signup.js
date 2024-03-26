@@ -13,6 +13,14 @@ const StyledConatiner = styled.div`
   width: 100vw;
   display: flex;
   flex-direction: row;
+  background-image: linear-gradient(
+    to right,
+    #27cbde,
+    #00b3ee,
+    #0097fd,
+    #0075ff,
+    #1245eb
+  );
 `;
 
 const StyledSubContainer1 = styled.div`
@@ -22,7 +30,7 @@ const StyledSubContainer1 = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-color: #f2f4ff;
+
   color: white;
   background-image: url("/Sign up-rafiki.png");
   background-repeat: no-repeat;
@@ -32,7 +40,7 @@ const StyledSubContainer1 = styled.div`
 const StyledSubContainer2 = styled.div`
   height: 100%;
   width: 55%;
-  background-color: blue;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,15 +80,29 @@ export default function Signup() {
             width: "100%",
             padding: "20px",
             display: "flex",
-            alignItems: "center",
+            // alignItems: "center",
             justifyContent: "center",
             gap: "1rem",
+
+            height: "5%",
           }}
         >
           <SiDesignernews
             style={{ color: "blue", height: "55px", width: "55px" }}
           />
-          <h2 style={{ color: "black", fontSize: "30px" }}>Daily-News</h2>
+          <h2
+            style={{
+              color: "black",
+              fontSize: "22px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+
+              height: "50%",
+            }}
+          >
+            Daily-News
+          </h2>
         </div>
         <div
           style={{
@@ -172,8 +194,10 @@ export default function Signup() {
           <p
             style={{
               color: "white",
-              width: "50%",
+              width: "100%",
               textAlign: "center",
+              borderBottom: "1px solid white",
+              padding: "4px",
             }}
           >
             Or Signup with Email
