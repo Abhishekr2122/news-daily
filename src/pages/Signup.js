@@ -13,13 +13,29 @@ const StyledConatiner = styled.div`
   width: 100vw;
   display: flex;
   flex-direction: row;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to right,
     #27cbde,
     #00b3ee,
     #0097fd,
     #0075ff,
     #1245eb
+  ); */
+  /* background-image: radial-gradient(
+    circle,
+    #141ae1,
+    #005ffe,
+    #0088ff,
+    #00a9f9,
+    #12c6eb
+  ); */
+  background-image: linear-gradient(
+    to left top,
+    #141ae1,
+    #005ffe,
+    #0088ff,
+    #00a9f9,
+    #12c6eb
   );
 `;
 
@@ -92,12 +108,11 @@ export default function Signup() {
           />
           <h2
             style={{
-              color: "black",
               fontSize: "22px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-
+              color: "white",
               height: "50%",
             }}
           >
@@ -115,7 +130,7 @@ export default function Signup() {
         >
           <a href="https://github.com/Abhishekr2122" target="noreferrer">
             <FaGithub
-              style={{ color: "blue", height: "23px", width: "23px" }}
+              style={{ color: "white", height: "23px", width: "23px" }}
             />
           </a>
 
@@ -124,7 +139,7 @@ export default function Signup() {
             target="noreferrer"
           >
             <FaLinkedin
-              style={{ color: "blue", height: "23px", width: "23px" }}
+              style={{ color: "white", height: "23px", width: "23px" }}
             />
           </a>
 
@@ -133,7 +148,7 @@ export default function Signup() {
             target="noreferrer"
           >
             <GoProjectSymlink
-              style={{ color: "blue", height: "23px", width: "23px" }}
+              style={{ color: "white", height: "23px", width: "23px" }}
             />
           </a>
 
@@ -142,7 +157,7 @@ export default function Signup() {
             target="noreferrer"
           >
             <ImProfile
-              style={{ color: "blue", height: "23px", width: "23px" }}
+              style={{ color: "white", height: "23px", width: "23px" }}
             />
           </a>
 
@@ -151,7 +166,7 @@ export default function Signup() {
             target="noreferrer"
           >
             <FaPortrait
-              style={{ color: "blue", height: "23px", width: "23px" }}
+              style={{ color: "white", height: "23px", width: "23px" }}
             />
           </a>
         </div>
@@ -317,7 +332,7 @@ export default function Signup() {
                     backgroundColor: "white",
                     width: "100%",
                     border: "1px solid white",
-                    color: "blue",
+                    color: "#0D30EA",
                     borderRadius: "6px",
                   }}
                 >
