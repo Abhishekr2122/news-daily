@@ -184,7 +184,7 @@ export default function Login() {
                 target="noreferrer"
                 style={{ color: "white", textAlign: "end", fontSize: "12px" }}
               >
-                Forget your password?
+                Forgot your password?
               </a>
             </div>
 
