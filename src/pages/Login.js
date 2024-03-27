@@ -24,10 +24,12 @@ const StyledLoginContainer = styled.div`
 `;
 
 const StyledFormContainer = styled.div`
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   width: 50vw;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 `;
 
 const StyledHeading = styled.h1`
@@ -219,56 +221,58 @@ export default function Login() {
             </p>
           </form>
         </StyledFormInputContainer>
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            padding: "12px",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+          }}
+        >
+          <a href="https://github.com/Abhishekr2122" target="noreferrer">
+            <FaGithub
+              style={{ color: "white", height: "23px", width: "23px" }}
+            />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/abhishek-shinde1/"
+            target="noreferrer"
+          >
+            <FaLinkedin
+              style={{ color: "white", height: "23px", width: "23px" }}
+            />
+          </a>
+
+          <a
+            href="https://github.com/Abhishekr2122?tab=repositories"
+            target="noreferrer"
+          >
+            <GoProjectSymlink
+              style={{ color: "white", height: "23px", width: "23px" }}
+            />
+          </a>
+
+          <a
+            href="https://drive.google.com/file/d/1q4onSVqsiyR_1DwU9yF_6LmU-YpRWJOB/view"
+            target="noreferrer"
+          >
+            <ImProfile
+              style={{ color: "white", height: "23px", width: "23px" }}
+            />
+          </a>
+
+          <a
+            href="https://abhishek-shinde-portfolio-netlify.netlify.app/"
+            target="noreferrer"
+          >
+            <FaPortrait
+              style={{ color: "white", height: "23px", width: "23px" }}
+            />
+          </a>
+        </div>
       </StyledFormContainer>
-      <div
-        style={{
-          width: "98vw",
-          display: "flex",
-          padding: "12px",
-          alignItems: "center",
-          justifyContent: "space-evenly",
-        }}
-      >
-        <a href="https://github.com/Abhishekr2122" target="noreferrer">
-          <FaGithub style={{ color: "white", height: "23px", width: "23px" }} />
-        </a>
-
-        <a
-          href="https://www.linkedin.com/in/abhishek-shinde1/"
-          target="noreferrer"
-        >
-          <FaLinkedin
-            style={{ color: "white", height: "23px", width: "23px" }}
-          />
-        </a>
-
-        <a
-          href="https://github.com/Abhishekr2122?tab=repositories"
-          target="noreferrer"
-        >
-          <GoProjectSymlink
-            style={{ color: "white", height: "23px", width: "23px" }}
-          />
-        </a>
-
-        <a
-          href="https://drive.google.com/file/d/1q4onSVqsiyR_1DwU9yF_6LmU-YpRWJOB/view"
-          target="noreferrer"
-        >
-          <ImProfile
-            style={{ color: "white", height: "23px", width: "23px" }}
-          />
-        </a>
-
-        <a
-          href="https://abhishek-shinde-portfolio-netlify.netlify.app/"
-          target="noreferrer"
-        >
-          <FaPortrait
-            style={{ color: "white", height: "23px", width: "23px" }}
-          />
-        </a>
-      </div>
     </StyledLoginContainer>
   );
 }
