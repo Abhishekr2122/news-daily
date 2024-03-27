@@ -342,7 +342,7 @@ export default function Signup() {
             </form>
           </div>
           <p style={{ color: "white" }}>
-            Haven't Login yet?{" "}
+            Haven't Loggedin yet?{" "}
             <a
               href="https://github.com/Abhishekr2122"
               target="noreferrer"
