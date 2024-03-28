@@ -1,4 +1,4 @@
-import ForgetPassword from "./pages/ForgetPassword";
+import ForgetPassword from "./pages/password/ForgetPassword";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
