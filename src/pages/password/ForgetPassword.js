@@ -1,15 +1,7 @@
 import styled from "styled-components";
-import { IoMdLock } from "react-icons/io";
 
-import PasswordLogo from "./PasswordLogo";
-import PasswordHeading from "./PasswordHeading";
-import PasswordSubHeading from "./PasswordSubHeading";
-import PasswordForm from "./PasswordForm";
-import FormInput from "./FormInput";
-import FormConfirmbtn from "./FormConfirmbtn";
-import BacktoLoginbtn from "./BacktoLoginbtn";
-import ContentContainer from "./ContentContainer";
 import Password from "./Password";
+import SetPassword from "./SetPassword";
 
 const StyledMainContainer = styled.div`
   height: 100vh;
@@ -30,7 +22,8 @@ const StyledMainContainer = styled.div`
 export default function ForgetPassword() {
   return (
     <StyledMainContainer>
-      <Password />
+      {/* <Password /> */}
+      <SetPassword />
     </StyledMainContainer>
   );
 }
