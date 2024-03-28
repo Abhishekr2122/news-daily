@@ -13,6 +13,7 @@ const StyledContainer = styled.div`
   backdrop-filter: blur(3.4px);
   -webkit-backdrop-filter: blur(3.4px);
   border: 1px solid rgba(255, 255, 255, 0.01);
+  gap: 0.5rem;
 `;
 
 export default function ContentContainer({ children }) {

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import Password from "./Password";
 import SetPassword from "./SetPassword";
+import PasswordConfirm from "./PasswordConfirm";
 
 const StyledMainContainer = styled.div`
   height: 100vh;
@@ -23,7 +24,8 @@ export default function ForgetPassword() {
   return (
     <StyledMainContainer>
       {/* <Password /> */}
-      <SetPassword />
+      {/* <SetPassword /> */}
+      <PasswordConfirm />
     </StyledMainContainer>
   );
 }

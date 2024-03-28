@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledHeading = styled.h1`
   color: white;
-  text-align: start;
+  text-align: center;
   width: 50%;
   text-decoration: underline;
 `;
