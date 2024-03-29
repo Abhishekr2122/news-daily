@@ -8,6 +8,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { GoProjectSymlink } from "react-icons/go";
 import { ImProfile } from "react-icons/im";
 import { FaPortrait } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 const StyledConatiner = styled.div`
   height: 100vh;
   width: 100vw;
@@ -343,13 +344,9 @@ export default function Signup() {
           </div>
           <p style={{ color: "white" }}>
             Haven't Loggedin yet?{" "}
-            <a
-              href="https://github.com/Abhishekr2122"
-              target="noreferrer"
-              style={{ color: "white" }}
-            >
+            <NavLink to="/login" style={{ color: "white" }}>
               Login
-            </a>
+            </NavLink>
           </p>
         </StyledFormContainer>
       </StyledSubContainer2>

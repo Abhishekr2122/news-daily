@@ -4,6 +4,7 @@ import { MdOutlineLogin } from "react-icons/md";
 import { FaGithub, FaGoogle, FaLinkedin, FaPortrait } from "react-icons/fa";
 import { ImProfile } from "react-icons/im";
 import { GoProjectSymlink } from "react-icons/go";
+import { NavLink } from "react-router-dom";
 
 const StyledLoginContainer = styled.div`
   height: 100vh;
@@ -179,13 +180,12 @@ export default function Login() {
                 }}
               />
 
-              <a
-                href="https://github.com/Abhishekr2122"
-                target="noreferrer"
-                style={{ color: "white", textAlign: "end", fontSize: "12px" }}
+              <NavLink
+                to="/password"
+                style={{ color: "white", textAlign: "end" }}
               >
                 Forgot your password?
-              </a>
+              </NavLink>
             </div>
 
             <button
@@ -211,13 +211,9 @@ export default function Login() {
               }}
             >
               Haven't Registered yet?
-              <a
-                href="https://github.com/Abhishekr2122"
-                target="noreferrer"
-                style={{ color: "white" }}
-              >
+              <NavLink to="/" style={{ color: "white" }}>
                 Register here
-              </a>
+              </NavLink>
             </p>
           </form>
         </StyledFormInputContainer>

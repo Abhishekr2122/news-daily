@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { IoMdArrowBack } from "react-icons/io";
+import { NavLink } from "react-router-dom";
 
 const StyledBtn = styled.button`
   display: flex;
@@ -18,11 +19,13 @@ const StyledHeading = styled.h3`
 
 export default function BacktoLoginbtn() {
   return (
-    <StyledBtn>
-      <IoMdArrowBack
-        style={{ color: "white", height: "20px", width: "20px" }}
-      />
-      <StyledHeading>Return to the login screen</StyledHeading>
-    </StyledBtn>
+    <NavLink to="/login" style={{ textDecoration: "none" }}>
+      <StyledBtn>
+        <IoMdArrowBack
+          style={{ color: "white", height: "20px", width: "20px" }}
+        />
+        <StyledHeading>Return to the login screen</StyledHeading>
+      </StyledBtn>
+    </NavLink>
   );
 }
