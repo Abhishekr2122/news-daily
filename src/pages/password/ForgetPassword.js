@@ -23,9 +23,9 @@ const StyledMainContainer = styled.div`
 export default function ForgetPassword() {
   return (
     <StyledMainContainer>
-      {/* <Password /> */}
+      <Password />
       {/* <SetPassword /> */}
-      <PasswordConfirm />
+      {/* <PasswordConfirm /> */}
     </StyledMainContainer>
   );
 }
