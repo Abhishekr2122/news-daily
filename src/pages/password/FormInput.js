@@ -22,6 +22,18 @@ const StyledInput = styled.input`
   border-radius: 6px;
   outline: none;
   color: white;
+
+  &:focus {
+    &::placeholder {
+      color: blue;
+      transition-duration: 0.5s;
+    }
+  }
+
+  &::placeholder {
+    color: white;
+    transition-duration: 0.5s;
+  }
 `;
 
 export default function FormInput({

@@ -9,27 +9,13 @@ import { GoProjectSymlink } from "react-icons/go";
 import { ImProfile } from "react-icons/im";
 import { FaPortrait } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 const StyledConatiner = styled.div`
   height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: row;
-  /* background-image: linear-gradient(
-    to right,
-    #27cbde,
-    #00b3ee,
-    #0097fd,
-    #0075ff,
-    #1245eb
-  ); */
-  /* background-image: radial-gradient(
-    circle,
-    #141ae1,
-    #005ffe,
-    #0088ff,
-    #00a9f9,
-    #12c6eb
-  ); */
+
   background-image: linear-gradient(
     to left top,
     #141ae1,
@@ -80,7 +66,6 @@ const StyledBtnContainer = styled.div`
 `;
 
 const StyledFormContainer = styled.div`
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -89,6 +74,12 @@ const StyledFormContainer = styled.div`
 `;
 
 export default function Signup() {
+  const [type, setType] = useState(null);
+
+  function handleType(type) {
+    setType(type);
+  }
+
   return (
     <StyledConatiner>
       <StyledSubContainer1>
@@ -181,10 +172,16 @@ export default function Signup() {
             <Button
               content="Signup as User"
               style={{ color: "white", backgroundColor: "transparent" }}
+              onClick={function () {
+                handleType("User");
+              }}
             />
             <Button
               content="Signup as Admin"
               style={{ color: "white", backgroundColor: "transparent" }}
+              onClick={function () {
+                handleType("Admin");
+              }}
             />
           </StyledBtnContainer>
           <button
