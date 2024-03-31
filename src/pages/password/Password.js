@@ -5,7 +5,7 @@ import PasswordHeading from "./PasswordHeading";
 import PasswordSubHeading from "./PasswordSubHeading";
 import PasswordForm from "./PasswordForm";
 import FormInput from "./FormInput";
-import FormConfirmbtn from "./FormConfirmbtn";
+import FormConfirmbtn from "../../ui/FormConfirmbtn";
 import BacktoLoginbtn from "./BacktoLoginbtn";
 
 export default function Password() {

@@ -11,6 +11,10 @@ const StyledBtn = styled.button`
   width: 100%;
   border-style: none;
   cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: white;
+  }
 `;
 
 const StyledHeading = styled.h3`

@@ -1,6 +1,6 @@
 import BacktoLoginbtn from "./BacktoLoginbtn";
 import ContentContainer from "./ContentContainer";
-import FormConfirmbtn from "./FormConfirmbtn";
+import FormConfirmbtn from "../../ui/FormConfirmbtn";
 import FormInput from "./FormInput";
 import PasswordForm from "./PasswordForm";
 import PasswordHeading from "./PasswordHeading";

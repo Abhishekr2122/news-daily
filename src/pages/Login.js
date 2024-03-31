@@ -5,6 +5,9 @@ import { FaGithub, FaGoogle, FaLinkedin, FaPortrait } from "react-icons/fa";
 import { ImProfile } from "react-icons/im";
 import { GoProjectSymlink } from "react-icons/go";
 import { NavLink } from "react-router-dom";
+import LoginSignupInput from "../ui/LoginSignupInput";
+import FormConfirmbtn from "../ui/FormConfirmbtn";
+import LoginSignupType from "../ui/LoginSignupType";
 
 const StyledLoginContainer = styled.div`
   height: 100vh;
@@ -71,63 +74,12 @@ export default function Login() {
     <StyledLoginContainer>
       <StyledFormContainer>
         <StyledHeading>Welcome back to News-Daily</StyledHeading>
-        <StyledComponentContainer>
-          <StyledBtnContainer>
-            <button
-              style={{
-                padding: "10px",
-                backgroundColor: "transparent",
-                color: "white",
-                border: "1px solid white",
-                borderRadius: "4px",
-                cursor: "pointer",
-              }}
-            >
-              Login as User
-            </button>
-            <button
-              style={{
-                padding: "10px",
-                backgroundColor: "transparent",
-                color: "white",
-                border: "1px solid white",
-                borderRadius: "4px",
-                cursor: "pointer",
-              }}
-            >
-              Login as Admin
-            </button>
-          </StyledBtnContainer>
-          <button
-            style={{
-              backgroundColor: "transparent",
-              color: "white",
-              border: "1px solid white",
-              borderRadius: "4px",
-              padding: "4px",
-              width: "50%",
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "3rem",
-            }}
-          >
-            <FaGoogle style={{ height: "20px", width: "20px" }} />
-            <p style={{ fontSize: "15px" }}>Login with Google</p>
-            <MdOutlineLogin style={{ height: "20px", width: "20px" }} />
-          </button>
-          <p
-            style={{
-              color: "white",
-              width: "100%",
-              textAlign: "center",
-              borderBottom: "1px solid white",
-            }}
-          >
-            Or Login with Email
-          </p>
-        </StyledComponentContainer>
+        <LoginSignupType
+          btnContent1="Login as User"
+          btnContent2="Login as Admin"
+          paraContent1="Login with Google"
+          paraContent2="Or Login with Email"
+        />
         <StyledFormInputContainer>
           <form
             style={{
@@ -138,69 +90,27 @@ export default function Login() {
               gap: "0.5rem",
             }}
           >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "0.5rem",
-              }}
-            >
-              <label>Email</label>
-              <input
-                type="email"
-                placeholder="Enter your Email"
-                style={{
-                  backgroundColor: "transparent",
-                  padding: "10px",
-                  border: "1px solid white",
-                  borderRadius: "6px",
-                  color: "inherit",
-                  outline: "none",
-                }}
-              />
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "0.5rem",
-              }}
-            >
-              <label>Password</label>
-              <input
-                type="password"
-                placeholder="Enter your Password"
-                style={{
-                  backgroundColor: "transparent",
-                  padding: "10px",
-                  border: "1px solid white",
-                  borderRadius: "6px",
-                  color: "inherit",
-                  outline: "none",
-                }}
-              />
+            <LoginSignupInput
+              label="E-mail"
+              placeholder="Enter your E-mail"
+              type="email"
+            />
 
+            <LoginSignupInput
+              label="Password"
+              placeholder="Enter your password"
+              type="password"
+            >
               <NavLink
                 to="/password"
                 style={{ color: "white", textAlign: "end" }}
               >
                 Forgot your password?
               </NavLink>
-            </div>
+            </LoginSignupInput>
 
-            <button
-              style={{
-                padding: "12px",
-                backgroundColor: "white",
-                width: "100%",
-                border: "1px solid white",
-                color: "#0D30EA",
-                borderRadius: "6px",
-                cursor: "pointer",
-              }}
-            >
-              Login
-            </button>
+            <FormConfirmbtn btnContent="Login" />
+
             <p
               style={{
                 textAlign: "center",
