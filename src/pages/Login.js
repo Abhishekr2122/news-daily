@@ -5,9 +5,9 @@ import { FaGithub, FaGoogle, FaLinkedin, FaPortrait } from "react-icons/fa";
 import { ImProfile } from "react-icons/im";
 import { GoProjectSymlink } from "react-icons/go";
 import { NavLink } from "react-router-dom";
-import LoginSignupInput from "../ui/LoginSignupInput";
+import LoginSignupInput from "../ui/LoginInput";
 import FormConfirmbtn from "../ui/FormConfirmbtn";
-import LoginSignupType from "../ui/LoginSignupType";
+import LoginSignupType from "../ui/LoginType";
 
 const StyledLoginContainer = styled.div`
   height: 100vh;
