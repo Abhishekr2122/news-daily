@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { MdLogin } from "react-icons/md";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledContainer = styled.div`
@@ -70,11 +71,49 @@ const StyledFormSubContainer = styled.div`
   width: 100%;
 `;
 
+const StyledDiv = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+`;
+
 const StyledPara3 = styled.p`
   color: white;
 `;
 
+const StyledBtn = styled.button`
+  color: white;
+  background-color: transparent;
+
+  text-decoration: underline;
+  border-style: none;
+  font-size: 14px;
+  cursor: pointer;
+`;
+
+const StyledSpinner = styled.div`
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  animation: spin 1s linear infinite;
+  /* margin: 50px auto; */
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+`;
+
 export default function SignupForm({ children }) {
+  const [isLogging, setIsLogging] = useState(false);
+  const navigate = useNavigate();
+
   return (
     <StyledContainer>
       <StyledBtnContainer>
@@ -91,12 +130,22 @@ export default function SignupForm({ children }) {
         <StyledForm>
           <StyledFormSubContainer>{children}</StyledFormSubContainer>
         </StyledForm>
-        <StyledPara3>
-          Haven't Loggedin yet?
-          <NavLink to="/login" style={{ color: "white" }}>
-            Login
-          </NavLink>
-        </StyledPara3>
+        <StyledDiv>
+          <StyledPara3>Haven't Loggedin yet?</StyledPara3>
+
+          {isLogging ? (
+            <StyledSpinner />
+          ) : (
+            <StyledBtn
+              onClick={function () {
+                setIsLogging(true);
+                // navigate("login");
+              }}
+            >
+              Login
+            </StyledBtn>
+          )}
+        </StyledDiv>
       </StyledFormContainer>
     </StyledContainer>
   );

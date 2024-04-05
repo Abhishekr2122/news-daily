@@ -1,13 +1,10 @@
 import styled from "styled-components";
-import { MdOutlineLogin } from "react-icons/md";
-
-import { FaGithub, FaGoogle, FaLinkedin, FaPortrait } from "react-icons/fa";
-import { ImProfile } from "react-icons/im";
-import { GoProjectSymlink } from "react-icons/go";
 import { NavLink } from "react-router-dom";
 import LoginSignupInput from "../ui/LoginInput";
 import FormConfirmbtn from "../ui/FormConfirmbtn";
 import LoginSignupType from "../ui/LoginType";
+import LoginFooter from "../ui/LoginFooter";
+import { useState } from "react";
 
 const StyledLoginContainer = styled.div`
   height: 100vh;
@@ -43,22 +40,12 @@ const StyledHeading = styled.h1`
   text-decoration: underline;
 `;
 
-const StyledComponentContainer = styled.div`
-  width: 100%;
+const StyledForm = styled.form`
+  color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-`;
-
-const StyledBtnContainer = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  padding: 6px;
+  width: 50%;
+  gap: 0.5rem;
 `;
 
 const StyledFormInputContainer = styled.div`
@@ -67,6 +54,14 @@ const StyledFormInputContainer = styled.div`
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid white;
+`;
+
+const StyledPara = styled.p`
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 `;
 
 export default function Login() {
@@ -81,15 +76,7 @@ export default function Login() {
           paraContent2="Or Login with Email"
         />
         <StyledFormInputContainer>
-          <form
-            style={{
-              color: "white",
-              display: "flex",
-              flexDirection: "column",
-              width: "50%",
-              gap: "0.5rem",
-            }}
-          >
+          <StyledForm>
             <LoginSignupInput
               label="E-mail"
               placeholder="Enter your E-mail"
@@ -111,73 +98,15 @@ export default function Login() {
 
             <FormConfirmbtn btnContent="Login" />
 
-            <p
-              style={{
-                textAlign: "center",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "0.5rem",
-              }}
-            >
+            <StyledPara>
               Haven't Registered yet?
               <NavLink to="/" style={{ color: "white" }}>
                 Register here
               </NavLink>
-            </p>
-          </form>
+            </StyledPara>
+          </StyledForm>
         </StyledFormInputContainer>
-        <div
-          style={{
-            width: "100%",
-            display: "flex",
-            padding: "12px",
-            alignItems: "center",
-            justifyContent: "space-evenly",
-          }}
-        >
-          <a href="https://github.com/Abhishekr2122" target="noreferrer">
-            <FaGithub
-              style={{ color: "white", height: "23px", width: "23px" }}
-            />
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/abhishek-shinde1/"
-            target="noreferrer"
-          >
-            <FaLinkedin
-              style={{ color: "white", height: "23px", width: "23px" }}
-            />
-          </a>
-
-          <a
-            href="https://github.com/Abhishekr2122?tab=repositories"
-            target="noreferrer"
-          >
-            <GoProjectSymlink
-              style={{ color: "white", height: "23px", width: "23px" }}
-            />
-          </a>
-
-          <a
-            href="https://drive.google.com/file/d/1q4onSVqsiyR_1DwU9yF_6LmU-YpRWJOB/view"
-            target="noreferrer"
-          >
-            <ImProfile
-              style={{ color: "white", height: "23px", width: "23px" }}
-            />
-          </a>
-
-          <a
-            href="https://abhishek-shinde-portfolio-netlify.netlify.app/"
-            target="noreferrer"
-          >
-            <FaPortrait
-              style={{ color: "white", height: "23px", width: "23px" }}
-            />
-          </a>
-        </div>
+        <LoginFooter />
       </StyledFormContainer>
     </StyledLoginContainer>
   );

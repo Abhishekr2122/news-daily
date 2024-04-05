@@ -77,11 +77,7 @@ const StyledFormContainer = styled.div`
 `;
 
 export default function Signup() {
-  // const [type, setType] = useState(null);
-
-  // function handleType(type) {
-  //   setType(type);
-  // }
+  const [isLogging, setIsLogging] = useState(false);
 
   return (
     <StyledConatiner>
@@ -91,7 +87,6 @@ export default function Signup() {
             width: "100%",
             padding: "20px",
             display: "flex",
-            // alignItems: "center",
             justifyContent: "center",
             gap: "1rem",
 

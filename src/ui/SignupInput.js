@@ -17,6 +17,18 @@ const StyledInput = styled.input`
   outline: none;
   border: 1px solid white;
   border-radius: 6px;
+
+  &:focus {
+    &::placeholder {
+      color: blue;
+      transition-duration: 0.5s;
+    }
+  }
+
+  &::placeholder {
+    color: white;
+    transition-duration: 0.5s;
+  }
 `;
 
 export default function SignupInput({ labelContent, inputType, placeHolder }) {
