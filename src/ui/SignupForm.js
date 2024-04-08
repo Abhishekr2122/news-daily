@@ -3,6 +3,12 @@ import { FaGoogle } from "react-icons/fa";
 import { MdLogin } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import Spinner from "./Spinner";
+import FormConfirmbtn from "./FormConfirmbtn";
+import useType from "../hooks/useType";
+import toast from "react-hot-toast";
+
+import "./signupform.css";
 
 const StyledContainer = styled.div`
   display: flex;
@@ -26,6 +32,7 @@ const StyledButton = styled.button`
   border: 1px solid white;
   border-radius: 4px;
   cursor: pointer;
+  transition-duration: 1s;
 `;
 
 const StyledSignupGoogleBtn = styled.button`
@@ -74,6 +81,7 @@ const StyledFormSubContainer = styled.div`
 const StyledDiv = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.3rem;
 `;
 
@@ -91,36 +99,39 @@ const StyledBtn = styled.button`
   cursor: pointer;
 `;
 
-const StyledSpinner = styled.div`
-  border: 4px solid rgba(0, 0, 0, 0.1);
-  border-top: 4px solid white;
-  border-radius: 50%;
-  width: 8px;
-  height: 8px;
-  animation: spin 1s linear infinite;
-  /* margin: 50px auto; */
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-`;
-
 export default function SignupForm({ children }) {
   const [isLogging, setIsLogging] = useState(false);
+
+  const { type, setType } = useType();
   const navigate = useNavigate();
 
   return (
     <StyledContainer>
       <StyledBtnContainer>
-        <StyledButton>Signup as User</StyledButton>
-        <StyledButton>Signup as Admin</StyledButton>
+        <StyledButton
+          onClick={function () {
+            setType("User");
+          }}
+          id={`${type === "User" ? "active1" : ""}`}
+        >
+          Signup as User
+        </StyledButton>
+        <StyledButton
+          onClick={function () {
+            setType("Admin");
+          }}
+          id={`${type === "Admin" ? "active2" : ""}`}
+        >
+          Signup as Admin
+        </StyledButton>
       </StyledBtnContainer>
-      <StyledSignupGoogleBtn>
+      <StyledSignupGoogleBtn
+        onClick={function () {
+          if (!type) {
+            toast.error("Please kindly select the Signup type first");
+          }
+        }}
+      >
         <FaGoogle style={{ height: "20px", width: "20px" }} />
         <StyledPara1>Signup with Google</StyledPara1>
         <MdLogin style={{ height: "20px", width: "20px" }} />
@@ -134,18 +145,22 @@ export default function SignupForm({ children }) {
           <StyledPara3>Haven't Loggedin yet?</StyledPara3>
 
           {isLogging ? (
-            <StyledSpinner />
+            <Spinner />
           ) : (
             <StyledBtn
               onClick={function () {
                 setIsLogging(true);
-                // navigate("login");
+                setTimeout(function () {
+                  setIsLogging(false);
+                  navigate("login");
+                }, 1100);
               }}
             >
               Login
             </StyledBtn>
           )}
         </StyledDiv>
+        <FormConfirmbtn btnContent="Signup" />
       </StyledFormContainer>
     </StyledContainer>
   );

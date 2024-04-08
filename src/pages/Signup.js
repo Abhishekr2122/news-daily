@@ -1,16 +1,11 @@
 import styled from "styled-components";
-import Button from "../ui/Button";
-import { FaGoogle } from "react-icons/fa";
-import { MdLogin } from "react-icons/md";
 import { SiDesignernews } from "react-icons/si";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { GoProjectSymlink } from "react-icons/go";
 import { ImProfile } from "react-icons/im";
 import { FaPortrait } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
 import { useState } from "react";
-import FormConfirmbtn from "../ui/FormConfirmbtn";
 import SignupForm from "../ui/SignupForm";
 import SignupInput from "../ui/SignupInput";
 const StyledConatiner = styled.div`

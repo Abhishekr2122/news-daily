@@ -1,0 +1,12 @@
+#active1 {
+  background-color: white;
+  color: blue;
+
+  transition-duration: 1s;
+}
+
+#active2 {
+  background-color: white;
+  color: blue;
+  transition-duration: 1s;
+}
