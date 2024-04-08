@@ -34,11 +34,40 @@ export default function LoginSignupInput({
   placeholder,
   type,
   children,
+  id,
+  register,
+  maxLengthValue,
+  maxLengthMessage,
+  minLengthvalue,
+  minLengthMessage,
+  validateFunction,
+  pattern,
+  patternMessage,
 }) {
   return (
     <StyledInputContainer>
       <StyledLabel>{label}</StyledLabel>
-      <StyledInput placeholder={placeholder} type={type} />
+      <StyledInput
+        placeholder={placeholder}
+        type={type}
+        id={id}
+        {...register(id, {
+          required: "This field is required",
+          maxLength: {
+            value: maxLengthValue,
+            message: maxLengthMessage,
+          },
+          minLength: {
+            value: minLengthvalue,
+            message: minLengthMessage,
+          },
+          validate: validateFunction,
+          pattern: {
+            value: pattern,
+            message: patternMessage,
+          },
+        })}
+      />
       {children}
     </StyledInputContainer>
   );

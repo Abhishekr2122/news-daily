@@ -31,11 +31,42 @@ const StyledInput = styled.input`
   }
 `;
 
-export default function SignupInput({ labelContent, inputType, placeHolder }) {
+export default function SignupInput({
+  labelContent,
+  inputType,
+  placeHolder,
+  id,
+  register,
+  maxLengthValue,
+  maxLengthMessage,
+  minLengthValue,
+  minLengthMessage,
+  validateFunction,
+  pattern,
+  patternMessage,
+}) {
   return (
     <StyledInputContainer>
       <StyledLabel>{labelContent}</StyledLabel>
-      <StyledInput type={inputType} placeholder={placeHolder} required />
+      <StyledInput
+        type={inputType}
+        placeholder={placeHolder}
+        {...register(id, {
+          required: "This filed is required ",
+          maxLength: {
+            value: maxLengthValue,
+            message: maxLengthMessage,
+          },
+          minLength: {
+            value: minLengthValue,
+            message: minLengthMessage,
+          },
+          pattern: {
+            value: pattern,
+            message: patternMessage,
+          },
+        })}
+      />
     </StyledInputContainer>
   );
 }

@@ -160,7 +160,18 @@ export default function SignupForm({ children }) {
             </StyledBtn>
           )}
         </StyledDiv>
-        <FormConfirmbtn btnContent="Signup" />
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "1rem",
+          }}
+        >
+          {/* <FormConfirmbtn btnContent="Signup" /> */}
+          <StyledButton>Signup</StyledButton>
+          <StyledButton>Cancel</StyledButton>
+        </div>
       </StyledFormContainer>
     </StyledContainer>
   );

@@ -5,9 +5,10 @@ import { FaLinkedin } from "react-icons/fa";
 import { GoProjectSymlink } from "react-icons/go";
 import { ImProfile } from "react-icons/im";
 import { FaPortrait } from "react-icons/fa";
-import { useState } from "react";
 import SignupForm from "../ui/SignupForm";
 import SignupInput from "../ui/SignupInput";
+import { useForm } from "react-hook-form";
+import SignupFooter from "../ui/SignupFooter";
 const StyledConatiner = styled.div`
   height: 100vh;
   width: 100vw;
@@ -56,129 +57,84 @@ const StyledHeading = styled.h1`
   font-size: 30px;
 `;
 
-const StyledBtnContainer = styled.div`
+const StyledHeader = styled.div`
+  width: 100%;
+  padding: 20px;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  justify-content: center;
   gap: 1rem;
+  height: 5%;
 `;
 
-const StyledFormContainer = styled.div`
+const StyledHeaderHeading = styled.h2`
+  font-size: 22px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  width: 50vw;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  height: 50%;
 `;
 
 export default function Signup() {
-  const [isLogging, setIsLogging] = useState(false);
-
+  const { register, handleSubmit, reset, getValues, formState } = useForm();
+  const { errors } = formState;
   return (
     <StyledConatiner>
       <StyledSubContainer1>
-        <div
-          style={{
-            width: "100%",
-            padding: "20px",
-            display: "flex",
-            justifyContent: "center",
-            gap: "1rem",
-
-            height: "5%",
-          }}
-        >
+        <StyledHeader>
           <SiDesignernews
             style={{ color: "blue", height: "55px", width: "55px" }}
           />
-          <h2
-            style={{
-              fontSize: "22px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "white",
-              height: "50%",
-            }}
-          >
-            Daily-News
-          </h2>
-        </div>
-        <div
-          style={{
-            width: "100%",
-            display: "flex",
-            padding: "12px",
-            alignItems: "center",
-            justifyContent: "space-evenly",
-          }}
-        >
-          <a href="https://github.com/Abhishekr2122" target="noreferrer">
-            <FaGithub
-              style={{ color: "white", height: "23px", width: "23px" }}
-            />
-          </a>
 
-          <a
-            href="https://www.linkedin.com/in/abhishek-shinde1/"
-            target="noreferrer"
-          >
-            <FaLinkedin
-              style={{ color: "white", height: "23px", width: "23px" }}
-            />
-          </a>
-
-          <a
-            href="https://github.com/Abhishekr2122?tab=repositories"
-            target="noreferrer"
-          >
-            <GoProjectSymlink
-              style={{ color: "white", height: "23px", width: "23px" }}
-            />
-          </a>
-
-          <a
-            href="https://drive.google.com/file/d/1q4onSVqsiyR_1DwU9yF_6LmU-YpRWJOB/view"
-            target="noreferrer"
-          >
-            <ImProfile
-              style={{ color: "white", height: "23px", width: "23px" }}
-            />
-          </a>
-
-          <a
-            href="https://abhishek-shinde-portfolio-netlify.netlify.app/"
-            target="noreferrer"
-          >
-            <FaPortrait
-              style={{ color: "white", height: "23px", width: "23px" }}
-            />
-          </a>
-        </div>
+          <StyledHeaderHeading>Daily-News</StyledHeaderHeading>
+        </StyledHeader>
+        <SignupFooter />
       </StyledSubContainer1>
 
       <StyledSubContainer2>
         <StyledHeading>Come let's join News-Daily</StyledHeading>
-        <SignupForm>
+        <SignupForm handleSubmit={handleSubmit}>
           <SignupInput
             labelContent="FirstName"
             inputType="text"
             placeHolder="Enter your First Name"
+            id="firstName"
+            register={register}
+            minLengthValue={2}
+            minLengthMessage="Name should be greater than 2 letters"
           />
           <SignupInput
             labelContent="LastName"
             inputType="text"
             placeHolder="Enter your Last Name"
+            id="lastName"
+            register={register}
+            minLengthValue={2}
+            minLengthMessage="Name should be greater than 2 letters"
           />
           <SignupInput
             labelContent="E-mail"
             inputType="email"
             placeHolder="Enter your E-mail "
+            register={register}
+            id="email"
+            pattern={`^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$`}
+            patternMessage="This is invalid email"
           />
+
           <SignupInput
             labelContent="Password"
             inputType="password"
             placeHolder="Enter your password"
+            register={register}
+            id="password"
+            minLengthValue={4}
+            minLengthMessage="The password should be of min 4 characters "
+            maxLengthValue={8}
+            maxLengthMessage="The password should be of max 8 characters"
+            pattern={`^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!@#$%^&*()_+}{":;'?/>.<,|\-]{8,}$`}
+            patternMessage="Password is not in proper format"
           />
         </SignupForm>
       </StyledSubContainer2>
