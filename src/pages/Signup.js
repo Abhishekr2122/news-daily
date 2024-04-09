@@ -122,6 +122,8 @@ export default function Signup() {
   const navigate = useNavigate();
   const { errors } = formState;
 
+  console.log(errors);
+
   return (
     <StyledConatiner>
       <StyledSubContainer1>
@@ -148,6 +150,7 @@ export default function Signup() {
             minLengthValue={2}
             minLengthMessage="Name should be greater than 2 letters"
             validateFunction={inputValidation}
+            errors={errors}
           />
           <SignupInput
             labelContent="LastName"
@@ -159,6 +162,7 @@ export default function Signup() {
             minLengthValue={2}
             minLengthMessage="Name should be greater than 2 letters"
             validateFunction={inputValidation}
+            errors={errors}
           />
           <SignupInput
             labelContent="E-mail"
@@ -169,6 +173,7 @@ export default function Signup() {
             registerValue="email"
             pattern={`^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$`}
             patternMessage="This is invalid email"
+            errors={errors}
           />
 
           <SignupInput
@@ -184,6 +189,7 @@ export default function Signup() {
             maxLengthMessage="The password should be of max 8 characters"
             pattern={`^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!@#$%^&*()_+}{":;'?/>.<,|\-]{8,}$`}
             patternMessage="Password is not in proper format"
+            errors={errors}
           />
           <StyledFormContent>
             <StyledFormPara>
@@ -207,7 +213,13 @@ export default function Signup() {
           </StyledFormContent>
           <StyledFormBtnContainer>
             <StyledFormButton type="submit">Signup</StyledFormButton>
-            <StyledFormButton>Cancel</StyledFormButton>
+            <StyledFormButton
+              onClick={function () {
+                reset();
+              }}
+            >
+              Cancel
+            </StyledFormButton>
           </StyledFormBtnContainer>
         </SignupForm>
       </StyledSubContainer2>

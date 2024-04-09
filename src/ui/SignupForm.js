@@ -2,7 +2,6 @@ import { FaGoogle } from "react-icons/fa";
 import { MdLogin } from "react-icons/md";
 
 import styled from "styled-components";
-import Spinner from "./Spinner";
 import useType from "../hooks/useType";
 import toast from "react-hot-toast";
 
@@ -14,6 +13,12 @@ const StyledContainer = styled.div`
   align-items: center;
   gap: 0.5rem;
   width: 50vw;
+  overflow: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+    scroll-behavior: smooth;
+  }
 `;
 
 const StyledBtnContainer = styled.div`
@@ -72,15 +77,16 @@ const StyledFormSubContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.4rem;
   width: 100%;
 `;
 
-export default function SignupForm({ children, handleSubmit, reset }) {
+export default function SignupForm({ children, handleSubmit }) {
   const { type, setType } = useType();
 
   function handleFormData(data) {
     console.log("Form is being submitted");
+    console.log(data);
   }
 
   return (

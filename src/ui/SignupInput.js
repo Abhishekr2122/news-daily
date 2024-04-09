@@ -45,31 +45,35 @@ export default function SignupInput({
   pattern,
   patternMessage,
   registerValue,
+  errors,
 }) {
   return (
     <StyledInputContainer>
       <StyledLabel>{labelContent}</StyledLabel>
-      <StyledInput
-        id={id}
-        type={inputType}
-        placeholder={placeHolder}
-        {...register(registerValue, {
-          required: "This field is required",
-          maxLength: {
-            value: maxLengthValue,
-            message: maxLengthMessage,
-          },
-          minLength: {
-            value: minLengthValue,
-            message: minLengthMessage,
-          },
-          pattern: {
-            value: pattern,
-            message: patternMessage,
-          },
-          validate: validateFunction,
-        })}
-      />
+      <>
+        <StyledInput
+          id={id}
+          type={inputType}
+          placeholder={placeHolder}
+          {...register(registerValue, {
+            required: "This field is required",
+            maxLength: {
+              value: maxLengthValue,
+              message: maxLengthMessage,
+            },
+            minLength: {
+              value: minLengthValue,
+              message: minLengthMessage,
+            },
+            pattern: {
+              value: pattern,
+              message: patternMessage,
+            },
+            validate: validateFunction,
+          })}
+        />
+      </>
+      {errors[registerValue]?.message ? errors[registerValue]?.message : ""}
     </StyledInputContainer>
   );
 }
