@@ -1,14 +1,13 @@
 import styled from "styled-components";
 import { SiDesignernews } from "react-icons/si";
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { GoProjectSymlink } from "react-icons/go";
-import { ImProfile } from "react-icons/im";
-import { FaPortrait } from "react-icons/fa";
 import SignupForm from "../ui/SignupForm";
 import SignupInput from "../ui/SignupInput";
 import { useForm } from "react-hook-form";
 import SignupFooter from "../ui/SignupFooter";
+import inputValidation from "../handlers/inputValidation";
+import { useState } from "react";
+import Spinner from "../ui/Spinner";
+import { useNavigate } from "react-router-dom";
 const StyledConatiner = styled.div`
   height: 100vh;
   width: 100vw;
@@ -76,9 +75,53 @@ const StyledHeaderHeading = styled.h2`
   height: 50%;
 `;
 
+const StyledFormContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+`;
+
+const StyledFormPara = styled.p`
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+`;
+
+const StyledFormLoginBtn = styled.button`
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+  border-style: none;
+  font-size: 14px;
+  cursor: pointer;
+`;
+
+const StyledFormBtnContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+`;
+
+const StyledFormButton = styled.button`
+  padding: 10px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition-duration: 1s;
+`;
+
 export default function Signup() {
   const { register, handleSubmit, reset, getValues, formState } = useForm();
+  const [isLogging, setIsLogging] = useState(false);
+  const navigate = useNavigate();
   const { errors } = formState;
+
   return (
     <StyledConatiner>
       <StyledSubContainer1>
@@ -94,15 +137,17 @@ export default function Signup() {
 
       <StyledSubContainer2>
         <StyledHeading>Come let's join News-Daily</StyledHeading>
-        <SignupForm handleSubmit={handleSubmit}>
+        <SignupForm handleSubmit={handleSubmit} reset={reset}>
           <SignupInput
             labelContent="FirstName"
             inputType="text"
             placeHolder="Enter your First Name"
             id="firstName"
             register={register}
+            registerValue="firstName"
             minLengthValue={2}
             minLengthMessage="Name should be greater than 2 letters"
+            validateFunction={inputValidation}
           />
           <SignupInput
             labelContent="LastName"
@@ -110,15 +155,18 @@ export default function Signup() {
             placeHolder="Enter your Last Name"
             id="lastName"
             register={register}
+            registerValue="lastName"
             minLengthValue={2}
             minLengthMessage="Name should be greater than 2 letters"
+            validateFunction={inputValidation}
           />
           <SignupInput
             labelContent="E-mail"
             inputType="email"
-            placeHolder="Enter your E-mail "
-            register={register}
+            placeHolder="Enter your E-mail"
             id="email"
+            register={register}
+            registerValue="email"
             pattern={`^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$`}
             patternMessage="This is invalid email"
           />
@@ -127,8 +175,9 @@ export default function Signup() {
             labelContent="Password"
             inputType="password"
             placeHolder="Enter your password"
-            register={register}
             id="password"
+            register={register}
+            registerValue="password"
             minLengthValue={4}
             minLengthMessage="The password should be of min 4 characters "
             maxLengthValue={8}
@@ -136,6 +185,30 @@ export default function Signup() {
             pattern={`^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!@#$%^&*()_+}{":;'?/>.<,|\-]{8,}$`}
             patternMessage="Password is not in proper format"
           />
+          <StyledFormContent>
+            <StyledFormPara>
+              Haven't Loggedin yet?
+              {isLogging ? (
+                <Spinner />
+              ) : (
+                <StyledFormLoginBtn
+                  onClick={function () {
+                    setIsLogging(true);
+                    setTimeout(function () {
+                      setIsLogging(false);
+                      navigate("login");
+                    }, 1100);
+                  }}
+                >
+                  Login
+                </StyledFormLoginBtn>
+              )}
+            </StyledFormPara>
+          </StyledFormContent>
+          <StyledFormBtnContainer>
+            <StyledFormButton type="submit">Signup</StyledFormButton>
+            <StyledFormButton>Cancel</StyledFormButton>
+          </StyledFormBtnContainer>
         </SignupForm>
       </StyledSubContainer2>
     </StyledConatiner>

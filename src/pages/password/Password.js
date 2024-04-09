@@ -7,8 +7,11 @@ import PasswordForm from "./PasswordForm";
 import FormInput from "./FormInput";
 import FormConfirmbtn from "../../ui/FormConfirmbtn";
 import BacktoLoginbtn from "./BacktoLoginbtn";
+import { useForm } from "react-hook-form";
 
 export default function Password() {
+  const { register, handleSubmit, formState } = useForm();
+
   return (
     <ContentContainer>
       <PasswordLogo
@@ -21,11 +24,12 @@ export default function Password() {
 
       <PasswordSubHeading headingContent="Enter your email to reset it!" />
 
-      <PasswordForm>
+      <PasswordForm handleSubmit={handleSubmit}>
         <FormInput
           labelContent="E-mail"
           placeholderValue="Enter your E-mail"
           inputType="email"
+          register={register}
         />
 
         <FormConfirmbtn btnContent="Confirm" />

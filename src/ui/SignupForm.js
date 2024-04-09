@@ -1,10 +1,8 @@
-import { useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { MdLogin } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
+
 import styled from "styled-components";
 import Spinner from "./Spinner";
-import FormConfirmbtn from "./FormConfirmbtn";
 import useType from "../hooks/useType";
 import toast from "react-hot-toast";
 
@@ -78,32 +76,12 @@ const StyledFormSubContainer = styled.div`
   width: 100%;
 `;
 
-const StyledDiv = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.3rem;
-`;
-
-const StyledPara3 = styled.p`
-  color: white;
-`;
-
-const StyledBtn = styled.button`
-  color: white;
-  background-color: transparent;
-
-  text-decoration: underline;
-  border-style: none;
-  font-size: 14px;
-  cursor: pointer;
-`;
-
-export default function SignupForm({ children }) {
-  const [isLogging, setIsLogging] = useState(false);
-
+export default function SignupForm({ children, handleSubmit, reset }) {
   const { type, setType } = useType();
-  const navigate = useNavigate();
+
+  function handleFormData(data) {
+    console.log("Form is being submitted");
+  }
 
   return (
     <StyledContainer>
@@ -138,40 +116,9 @@ export default function SignupForm({ children }) {
       </StyledSignupGoogleBtn>
       <StyledPara2>Or Signup with Email</StyledPara2>
       <StyledFormContainer>
-        <StyledForm>
+        <StyledForm onSubmit={handleSubmit(handleFormData)}>
           <StyledFormSubContainer>{children}</StyledFormSubContainer>
         </StyledForm>
-        <StyledDiv>
-          <StyledPara3>Haven't Loggedin yet?</StyledPara3>
-
-          {isLogging ? (
-            <Spinner />
-          ) : (
-            <StyledBtn
-              onClick={function () {
-                setIsLogging(true);
-                setTimeout(function () {
-                  setIsLogging(false);
-                  navigate("login");
-                }, 1100);
-              }}
-            >
-              Login
-            </StyledBtn>
-          )}
-        </StyledDiv>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "1rem",
-          }}
-        >
-          {/* <FormConfirmbtn btnContent="Signup" /> */}
-          <StyledButton>Signup</StyledButton>
-          <StyledButton>Cancel</StyledButton>
-        </div>
       </StyledFormContainer>
     </StyledContainer>
   );

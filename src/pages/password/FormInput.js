@@ -40,11 +40,17 @@ export default function FormInput({
   labelContent,
   placeholderValue,
   inputType,
+  register,
 }) {
   return (
     <StyledInputContainer>
       <StyledLabel>{labelContent}</StyledLabel>
-      <StyledInput placeholder={placeholderValue} type={inputType} />
+      <StyledInput
+        placeholder={placeholderValue}
+        type={inputType}
+        id="email"
+        {...register("email", { required: true })}
+      />
     </StyledInputContainer>
   );
 }

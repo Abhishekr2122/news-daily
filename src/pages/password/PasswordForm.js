@@ -11,10 +11,15 @@ const StyledForm = styled.form`
   gap: 1rem;
 `;
 
-export default function PasswordForm({ children }) {
+export default function PasswordForm({ children, handleSubmit }) {
+  function handleFormData(data) {
+    console.log(data);
+  }
   return (
     <StyledFormContainer>
-      <StyledForm>{children}</StyledForm>
+      <StyledForm onSubmit={handleSubmit(handleFormData)}>
+        {children}
+      </StyledForm>
     </StyledFormContainer>
   );
 }
