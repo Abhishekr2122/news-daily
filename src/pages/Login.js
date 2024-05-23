@@ -4,7 +4,6 @@ import LoginSignupInput from "../ui/LoginInput";
 import FormConfirmbtn from "../ui/FormConfirmbtn";
 import LoginSignupType from "../ui/LoginType";
 import LoginFooter from "../ui/LoginFooter";
-import { useState } from "react";
 
 const StyledLoginContainer = styled.div`
   height: 100vh;

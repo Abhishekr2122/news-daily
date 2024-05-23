@@ -1,3 +1,5 @@
+import { useState } from "react";
+import toast from "react-hot-toast";
 import { FaGoogle } from "react-icons/fa";
 import { MdOutlineLogin } from "react-icons/md";
 import styled from "styled-components";
@@ -56,13 +58,37 @@ export default function LoginSignupType({
   paraContent1,
   paraContent2,
 }) {
+  const [loginType, setLoginType] = useState("");
+
+  function handleLoginType(loginType) {
+    setLoginType(loginType);
+  }
+
   return (
     <StyledMainContainer>
       <StyledBtnContainer>
-        <StyledBtn>{btnContent1}</StyledBtn>
-        <StyledBtn>{btnContent2}</StyledBtn>
+        <StyledBtn
+          onClick={function () {
+            handleLoginType("user");
+          }}
+        >
+          {btnContent1}
+        </StyledBtn>
+        <StyledBtn
+          onClick={function () {
+            handleLoginType("admin");
+          }}
+        >
+          {btnContent2}
+        </StyledBtn>
       </StyledBtnContainer>
-      <StyledGoogleBtn>
+      <StyledGoogleBtn
+        onClick={function () {
+          if (loginType === "") {
+            toast.error("Kindly select the login type first");
+          }
+        }}
+      >
         <FaGoogle style={{ height: "20px", width: "20px" }} />
         <p style={{ fontSize: "15px" }}>{paraContent1}</p>
         <MdOutlineLogin style={{ height: "20px", width: "20px" }} />

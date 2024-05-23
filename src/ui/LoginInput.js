@@ -51,22 +51,22 @@ export default function LoginSignupInput({
         placeholder={placeholder}
         type={type}
         id={id}
-        {...register(id, {
-          required: "This field is required",
-          maxLength: {
-            value: maxLengthValue,
-            message: maxLengthMessage,
-          },
-          minLength: {
-            value: minLengthvalue,
-            message: minLengthMessage,
-          },
-          validate: validateFunction,
-          pattern: {
-            value: pattern,
-            message: patternMessage,
-          },
-        })}
+        // {...register(id, {
+        //   required: "This field is required",
+        //   maxLength: {
+        //     value: maxLengthValue,
+        //     message: maxLengthMessage,
+        //   },
+        //   minLength: {
+        //     value: minLengthvalue,
+        //     message: minLengthMessage,
+        //   },
+        //   validate: validateFunction,
+        //   pattern: {
+        //     value: pattern,
+        //     message: patternMessage,
+        //   },
+        // })}
       />
       {children}
     </StyledInputContainer>
