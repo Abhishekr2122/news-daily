@@ -86,8 +86,23 @@ const StyledForgotPasswordBtn = styled.button`
   width: 55%;
 `;
 
+const StyledRegisterBtn = styled.button`
+  background-color: transparent;
+  color: white;
+  border-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: underline;
+  padding: 4px;
+  font-size: medium;
+  cursor: pointer;
+`;
+
 export default function Login() {
   const [isForgotPasswordClicked, setIsForgotpasswordClicked] = useState(false);
+  const [isRegisterClicked, setIsRegisterClicked] = useState(false);
   const navigate = useNavigate();
 
   function handleForgotPassword(e) {
@@ -97,8 +112,15 @@ export default function Login() {
       navigate("/password");
       setIsForgotpasswordClicked(false);
     }, 1100);
+  }
 
-    console.log("handle pasword is being clicked");
+  function handleRegisterClick(e) {
+    e.preventDefault();
+    setIsRegisterClicked(true);
+    setTimeout(function () {
+      navigate("/");
+      setIsRegisterClicked(false);
+    }, 1100);
   }
 
   return (
@@ -139,9 +161,9 @@ export default function Login() {
 
             <StyledPara>
               Haven't Registered yet?
-              <NavLink to="/" style={{ color: "white" }}>
-                Register here
-              </NavLink>
+              <StyledRegisterBtn onClick={handleRegisterClick}>
+                {isRegisterClicked ? <Spinner /> : "Register"}
+              </StyledRegisterBtn>
             </StyledPara>
           </StyledForm>
         </StyledFormInputContainer>
