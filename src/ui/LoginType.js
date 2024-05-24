@@ -4,6 +4,8 @@ import { FaGoogle } from "react-icons/fa";
 import { MdOutlineLogin } from "react-icons/md";
 import styled from "styled-components";
 
+import "./logintype.css";
+
 const StyledMainContainer = styled.div`
   width: 100%;
   display: flex;
@@ -29,6 +31,7 @@ const StyledBtn = styled.button`
   border: 1px solid white;
   border-radius: 4px;
   cursor: pointer;
+  transition-duration: 1s;
 `;
 
 const StyledGoogleBtn = styled.button`
@@ -71,6 +74,7 @@ export default function LoginSignupType({
           onClick={function () {
             handleLoginType("user");
           }}
+          className={`${loginType === "user" ? "active" : ""}`}
         >
           {btnContent1}
         </StyledBtn>
@@ -78,6 +82,7 @@ export default function LoginSignupType({
           onClick={function () {
             handleLoginType("admin");
           }}
+          className={`${loginType === "admin" ? "active" : ""}`}
         >
           {btnContent2}
         </StyledBtn>
@@ -85,7 +90,7 @@ export default function LoginSignupType({
       <StyledGoogleBtn
         onClick={function () {
           if (loginType === "") {
-            toast.error("Kindly select the login type first");
+            toast.error("Please kindly select the login type first");
           }
         }}
       >

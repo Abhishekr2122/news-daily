@@ -1,9 +1,11 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import LoginSignupInput from "../ui/LoginInput";
 import FormConfirmbtn from "../ui/FormConfirmbtn";
 import LoginSignupType from "../ui/LoginType";
 import LoginFooter from "../ui/LoginFooter";
+import { useState } from "react";
+import Spinner from "../ui/Spinner";
 
 const StyledLoginContainer = styled.div`
   height: 100vh;
@@ -63,7 +65,42 @@ const StyledPara = styled.p`
   gap: 0.5rem;
 `;
 
+const StyledButtonContainer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: end;
+`;
+
+const StyledForgotPasswordBtn = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 4px;
+  background-color: transparent;
+  color: white;
+  border-style: none;
+  text-decoration: underline;
+  font-size: medium;
+  text-align: end;
+  cursor: pointer;
+  width: 55%;
+`;
+
 export default function Login() {
+  const [isForgotPasswordClicked, setIsForgotpasswordClicked] = useState(false);
+  const navigate = useNavigate();
+
+  function handleForgotPassword(e) {
+    e.preventDefault();
+    setIsForgotpasswordClicked(true);
+    setTimeout(function () {
+      navigate("/password");
+      setIsForgotpasswordClicked(false);
+    }, 1100);
+
+    console.log("handle pasword is being clicked");
+  }
+
   return (
     <StyledLoginContainer>
       <StyledFormContainer>
@@ -87,12 +124,15 @@ export default function Login() {
               placeholder="Enter your password"
               type="password"
             >
-              <NavLink
-                to="/password"
-                style={{ color: "white", textAlign: "end" }}
-              >
-                Forgot your password?
-              </NavLink>
+              <StyledButtonContainer>
+                <StyledForgotPasswordBtn onClick={handleForgotPassword}>
+                  {isForgotPasswordClicked ? (
+                    <Spinner />
+                  ) : (
+                    "Forgot password click here"
+                  )}
+                </StyledForgotPasswordBtn>
+              </StyledButtonContainer>
             </LoginSignupInput>
 
             <FormConfirmbtn btnContent="Login" />
