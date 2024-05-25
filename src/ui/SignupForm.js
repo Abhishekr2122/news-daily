@@ -81,12 +81,10 @@ const StyledFormSubContainer = styled.div`
   width: 100%;
 `;
 
-export default function SignupForm({ children, handleSubmit }) {
-  const { type, setType } = useType();
-
+export default function SignupForm({ children, handleSubmit, type, setType }) {
   function handleFormData(data) {
-    console.log("Form is being submitted");
-    console.log(data);
+    console.log("This is the data  submitted while filling the data", data);
+    console.log("data");
   }
 
   return (

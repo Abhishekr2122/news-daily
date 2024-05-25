@@ -8,6 +8,7 @@ import inputValidation from "../handlers/inputValidation";
 import { useState } from "react";
 import Spinner from "../ui/Spinner";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 const StyledConatiner = styled.div`
   height: 100vh;
   width: 100vw;
@@ -117,12 +118,11 @@ const StyledFormButton = styled.button`
 `;
 
 export default function Signup() {
-  const { register, handleSubmit, reset, getValues, formState } = useForm();
   const [isLogging, setIsLogging] = useState(false);
+  const [type, setType] = useState("");
+  const { register, handleSubmit, reset, formState } = useForm();
   const navigate = useNavigate();
   const { errors } = formState;
-
-  console.log(errors);
 
   return (
     <StyledConatiner>
@@ -139,7 +139,12 @@ export default function Signup() {
 
       <StyledSubContainer2>
         <StyledHeading>Come let's join News-Daily</StyledHeading>
-        <SignupForm handleSubmit={handleSubmit} reset={reset}>
+        <SignupForm
+          handleSubmit={handleSubmit}
+          reset={reset}
+          type={type}
+          setType={setType}
+        >
           <SignupInput
             labelContent="FirstName"
             inputType="text"
@@ -212,7 +217,16 @@ export default function Signup() {
             </StyledFormPara>
           </StyledFormContent>
           <StyledFormBtnContainer>
-            <StyledFormButton type="submit">Signup</StyledFormButton>
+            <StyledFormButton
+              type="submit"
+              onClick={function (e) {
+                if (type === "") {
+                  toast.error("Please Kindly select the Signup type first");
+                }
+              }}
+            >
+              Signup
+            </StyledFormButton>
             <StyledFormButton
               onClick={function () {
                 reset();
