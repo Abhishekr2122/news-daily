@@ -5,10 +5,11 @@ import SignupInput from "../ui/SignupInput";
 import { useForm } from "react-hook-form";
 import SignupFooter from "../ui/SignupFooter";
 import inputValidation from "../handlers/inputValidation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Spinner from "../ui/Spinner";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { signupData } from "../Apis/Signupformapis/handleSignupData";
 const StyledConatiner = styled.div`
   height: 100vh;
   width: 100vw;
@@ -123,6 +124,10 @@ export default function Signup() {
   const { register, handleSubmit, reset, formState } = useForm();
   const navigate = useNavigate();
   const { errors } = formState;
+
+  useEffect(function () {
+    signupData();
+  }, []);
 
   return (
     <StyledConatiner>
