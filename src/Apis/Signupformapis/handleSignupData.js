@@ -13,5 +13,7 @@ export async function signupData() {
     ])
     .select();
   console.log(data, error);
-  return 0;
+  // return 0;
+
+  // console.log("Hello there my self  abhishek rajesh Shinde");
 }

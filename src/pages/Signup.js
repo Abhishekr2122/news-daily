@@ -125,10 +125,6 @@ export default function Signup() {
   const navigate = useNavigate();
   const { errors } = formState;
 
-  useEffect(function () {
-    signupData();
-  }, []);
-
   return (
     <StyledConatiner>
       <StyledSubContainer1>
@@ -222,16 +218,7 @@ export default function Signup() {
             </StyledFormPara>
           </StyledFormContent>
           <StyledFormBtnContainer>
-            <StyledFormButton
-              type="submit"
-              onClick={function (e) {
-                if (type === "") {
-                  toast.error("Please Kindly select the Signup type first");
-                }
-              }}
-            >
-              Signup
-            </StyledFormButton>
+            <StyledFormButton type="submit">Signup</StyledFormButton>
             <StyledFormButton
               onClick={function () {
                 reset();

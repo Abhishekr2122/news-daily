@@ -83,8 +83,14 @@ const StyledFormSubContainer = styled.div`
 
 export default function SignupForm({ children, handleSubmit, type, setType }) {
   function handleFormData(data) {
-    console.log("This is the data  submitted while filling the data", data);
-    console.log("data");
+    if (type === "") {
+      toast.error("Please kindly select the Signup type first");
+    }
+
+    if (type !== "") {
+      const formData = { ...data, type };
+      console.log(formData);
+    }
   }
 
   return (
