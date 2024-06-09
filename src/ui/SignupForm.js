@@ -6,6 +6,7 @@ import useType from "../hooks/useType";
 import toast from "react-hot-toast";
 
 import "./signupform.css";
+import checkAccount from "../Apis/Signupformapis/checkAccount";
 
 const StyledContainer = styled.div`
   display: flex;
@@ -81,15 +82,38 @@ const StyledFormSubContainer = styled.div`
   width: 100%;
 `;
 
-export default function SignupForm({ children, handleSubmit, type, setType }) {
+export default function SignupForm({
+  children,
+  handleSubmit,
+  type,
+  setType,
+  reset,
+}) {
   function handleFormData(data) {
     if (type === "") {
       toast.error("Please kindly select the Signup type first");
     }
 
     if (type !== "") {
-      const formData = { ...data, type };
-      console.log(formData);
+      checkAccount().then(function (checkAccountData) {
+        const { resData, error } = checkAccountData;
+        if (error !== null) {
+          toast.error("No Internet connection");
+        }
+
+        if (error === null) {
+          const { email } = resData[0];
+          console.log(email);
+          console.log(data);
+          if (email === data.email) {
+            toast.error("This account already exists");
+            reset();
+            setType("");
+          }
+        }
+      });
+      // const formData = { ...data, type };
+      // console.log(formData);
     }
   }
 
