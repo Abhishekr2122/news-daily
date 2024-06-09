@@ -106,17 +106,23 @@ export default function SignupForm({
 
         if (error === null) {
           if (resData.length > 0) {
-            const { email } = resData[0];
+            const accountArray = resData.map(function (citem) {
+              return citem.email;
+            });
 
-            if (email === data.email) {
+            if (accountArray.includes(data.email)) {
               toast.error("This account already exists");
               reset();
               setType("");
             } else {
               signupData({ ...data, type });
+              reset();
+              toast.success("Signup process completed");
             }
           } else {
             signupData({ ...data, type });
+            reset();
+            toast.success("Signup process completed");
           }
         }
       });
