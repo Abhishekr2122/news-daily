@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 
 import "./signupform.css";
 import checkAccount from "../Apis/Signupformapis/checkAccount";
+import { signupData } from "../Apis/Signupformapis/handleSignupData";
 
 const StyledContainer = styled.div`
   display: flex;
@@ -97,23 +98,28 @@ export default function SignupForm({
     if (type !== "") {
       checkAccount().then(function (checkAccountData) {
         const { resData, error } = checkAccountData;
+        console.log(error);
         if (error !== null) {
           toast.error("No Internet connection");
         }
+        console.log(resData.length);
 
         if (error === null) {
-          const { email } = resData[0];
-          console.log(email);
-          console.log(data);
-          if (email === data.email) {
-            toast.error("This account already exists");
-            reset();
-            setType("");
+          if (resData.length > 0) {
+            const { email } = resData[0];
+
+            if (email === data.email) {
+              toast.error("This account already exists");
+              reset();
+              setType("");
+            } else {
+              signupData({ ...data, type });
+            }
+          } else {
+            signupData({ ...data, type });
           }
         }
       });
-      // const formData = { ...data, type };
-      // console.log(formData);
     }
   }
 

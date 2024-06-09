@@ -1,14 +1,11 @@
 import { supabase } from "../../App";
 
-export async function signupData() {
+export async function signupData(formData) {
   const { data, error } = await supabase
     .from("Registrations")
     .insert([
       {
-        firstName: "Abhishek",
-        lastName: "Shinde",
-        email: "abhishekrshinde21@gmail.com",
-        password: "Abhishek",
+        ...formData,
       },
     ])
     .select();
