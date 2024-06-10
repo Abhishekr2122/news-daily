@@ -8,8 +8,6 @@ import Password from "./pages/password/Password";
 import SetPassword from "./pages/password/SetPassword";
 import PasswordConfirm from "./pages/password/PasswordConfirm";
 import { Toaster } from "react-hot-toast";
-import { useEffect } from "react";
-import { signupData } from "./Apis/Signupformapis/handleSignupData";
 
 export const supabase = createClient(
   "https://nmbnhupahyfzmscjrijv.supabase.co",

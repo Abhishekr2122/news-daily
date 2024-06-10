@@ -9,8 +9,4 @@ export async function signupData(formData) {
       },
     ])
     .select();
-  console.log(data, error);
-  // return 0;
-
-  // console.log("Hello there my self  abhishek rajesh Shinde");
 }
