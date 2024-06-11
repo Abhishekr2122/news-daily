@@ -132,7 +132,7 @@ export default function SignupForm({
   return (
     <StyledContainer>
       <StyledBtnContainer>
-        <StyledButton
+        {/* <StyledButton
           onClick={function () {
             setType("User");
           }}
@@ -147,7 +147,7 @@ export default function SignupForm({
           id={`${type === "Admin" ? "active2" : ""}`}
         >
           Signup as Admin
-        </StyledButton>
+        </StyledButton> */}
       </StyledBtnContainer>
       <StyledSignupGoogleBtn
         onClick={function () {
