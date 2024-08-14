@@ -8,36 +8,32 @@ import inputValidation from "../handlers/inputValidation";
 import { useEffect, useState } from "react";
 import Spinner from "../ui/Spinner";
 import { useNavigate } from "react-router-dom";
-import toast from "react-hot-toast";
-import { signupData } from "../Apis/Signupformapis/handleSignupData";
+
 const StyledConatiner = styled.div`
   height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: row;
 
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to left top,
     #141ae1,
     #005ffe,
     #0088ff,
     #00a9f9,
     #12c6eb
-  );
+  ); */
+  /* background-color: blue; */
 `;
 
 const StyledSubContainer1 = styled.div`
   height: 100%;
-  width: 45%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  width: 50%;
+  /* background-color: aliceblue; */
 
-  color: white;
-  background-image: url("/Sign up-rafiki.png");
+  background-image: url("./new-news-image.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 `;
 
 const StyledSubContainer2 = styled.div`
@@ -58,24 +54,24 @@ const StyledHeading = styled.h1`
   font-size: 30px;
 `;
 
-const StyledHeader = styled.div`
-  width: 100%;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  height: 5%;
-`;
+// const StyledHeader = styled.div`
+//   width: 100%;
+//   padding: 20px;
+//   display: flex;
+//   justify-content: center;
+//   gap: 1rem;
+//   height: 5%;
+// `;
 
-const StyledHeaderHeading = styled.h2`
-  font-size: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  height: 50%;
-`;
+// const StyledHeaderHeading = styled.h2`
+//   font-size: 22px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   text-align: center;
+//   color: white;
+//   height: 50%;
+// `;
 
 const StyledFormContent = styled.div`
   display: flex;
@@ -85,20 +81,20 @@ const StyledFormContent = styled.div`
 `;
 
 const StyledFormPara = styled.p`
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  color: black;
 `;
 
 const StyledFormLoginBtn = styled.button`
-  color: white;
   background-color: transparent;
   text-decoration: underline;
   border-style: none;
   font-size: 14px;
   cursor: pointer;
+  color: black;
 `;
 
 const StyledFormBtnContainer = styled.div`
@@ -111,7 +107,7 @@ const StyledFormBtnContainer = styled.div`
 const StyledFormButton = styled.button`
   padding: 10px;
   background-color: transparent;
-  color: white;
+  color: black;
   border: 1px solid white;
   border-radius: 4px;
   cursor: pointer;
@@ -127,16 +123,7 @@ export default function Signup() {
 
   return (
     <StyledConatiner>
-      <StyledSubContainer1>
-        <StyledHeader>
-          <SiDesignernews
-            style={{ color: "blue", height: "55px", width: "55px" }}
-          />
-
-          <StyledHeaderHeading>Daily-News</StyledHeaderHeading>
-        </StyledHeader>
-        <SignupFooter />
-      </StyledSubContainer1>
+      <StyledSubContainer1></StyledSubContainer1>
 
       <StyledSubContainer2>
         <StyledHeading>Come let's join News-Daily</StyledHeading>
