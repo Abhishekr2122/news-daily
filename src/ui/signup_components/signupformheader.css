@@ -1,0 +1,30 @@
+.signup-form-header {
+  /* border: 1px solid brown; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup-google-btn {
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  gap: 25px;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.signup-form-heading {
+  font-weight: 500;
+}
+
+.signup-google-btn-icon {
+  height: 22px;
+  width: 22px;
+}
+
+.signup-form-sub-heading {
+  font-weight: 400;
+}

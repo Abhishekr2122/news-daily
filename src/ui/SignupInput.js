@@ -4,7 +4,7 @@ const StyledInputContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  color: white;
+  color: black;
   width: 100%;
 `;
 
@@ -15,7 +15,7 @@ const StyledInput = styled.input`
   color: inherit;
   background-color: transparent;
   outline: none;
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 6px;
 
   &:focus {
@@ -26,7 +26,7 @@ const StyledInput = styled.input`
   }
 
   &::placeholder {
-    color: white;
+    color: black;
     transition-duration: 0.5s;
   }
 `;

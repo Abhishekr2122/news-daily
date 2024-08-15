@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { SiDesignernews } from "react-icons/si";
-import SignupForm from "../ui/SignupForm";
+// import SignupForm from "../ui/SignupForm";
 import SignupInput from "../ui/SignupInput";
 import { useForm } from "react-hook-form";
 import SignupFooter from "../ui/SignupFooter";
@@ -8,12 +8,16 @@ import inputValidation from "../handlers/inputValidation";
 import { useEffect, useState } from "react";
 import Spinner from "../ui/Spinner";
 import { useNavigate } from "react-router-dom";
+import SignupImage from "../ui/signup_components/SignupImage";
+import SignupForm from "../ui/signup_components/SignupForm";
 
 const StyledConatiner = styled.div`
   height: 100vh;
   width: 100vw;
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* background-color: aliceblue; */
 
   /* background-image: linear-gradient(
     to left top,
@@ -26,19 +30,8 @@ const StyledConatiner = styled.div`
   /* background-color: blue; */
 `;
 
-const StyledSubContainer1 = styled.div`
-  height: 100%;
-  width: 50%;
-  /* background-color: aliceblue; */
-
-  background-image: url("./new-news-image.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-`;
-
 const StyledSubContainer2 = styled.div`
   height: 100%;
-  width: 55%;
 
   display: flex;
   flex-direction: column;
@@ -48,7 +41,7 @@ const StyledSubContainer2 = styled.div`
 
 const StyledHeading = styled.h1`
   text-align: center;
-  color: white;
+  color: black;
   width: 100%;
   text-decoration: underline;
   font-size: 30px;
@@ -123,9 +116,20 @@ export default function Signup() {
 
   return (
     <StyledConatiner>
-      <StyledSubContainer1></StyledSubContainer1>
+      <div
+        style={{
+          height: "100%",
+          display: "flex",
+          width: "100%",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <SignupImage />
+        <SignupForm />
+      </div>
 
-      <StyledSubContainer2>
+      {/* <StyledSubContainer2>
         <StyledHeading>Come let's join News-Daily</StyledHeading>
         <SignupForm
           handleSubmit={handleSubmit}
@@ -215,7 +219,7 @@ export default function Signup() {
             </StyledFormButton>
           </StyledFormBtnContainer>
         </SignupForm>
-      </StyledSubContainer2>
+      </StyledSubContainer2> */}
     </StyledConatiner>
   );
 }

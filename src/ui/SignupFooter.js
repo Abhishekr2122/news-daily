@@ -16,33 +16,33 @@ export default function SignupFooter() {
   return (
     <StyledFooter>
       <AnchorElem href="https://github.com/Abhishekr2122" target="noreferrer">
-        <FaGithub style={{ color: "white", height: "23px", width: "23px" }} />
+        <FaGithub style={{ color: "black", height: "23px", width: "23px" }} />
       </AnchorElem>
       <AnchorElem
         href="https://www.linkedin.com/in/abhishek-shinde1/"
         target="noreferrer"
       >
-        <FaLinkedin style={{ color: "white", height: "23px", width: "23px" }} />
+        <FaLinkedin style={{ color: "black", height: "23px", width: "23px" }} />
       </AnchorElem>
       <AnchorElem
         href="https://github.com/Abhishekr2122?tab=repositories"
         target="noreferrer"
       >
         <GoProjectSymlink
-          style={{ color: "white", height: "23px", width: "23px" }}
+          style={{ color: "black", height: "23px", width: "23px" }}
         />
       </AnchorElem>
       <AnchorElem
         href="https://drive.google.com/file/d/1q4onSVqsiyR_1DwU9yF_6LmU-YpRWJOB/view"
         target="noreferrer"
       >
-        <ImProfile style={{ color: "white", height: "23px", width: "23px" }} />
+        <ImProfile style={{ color: "black", height: "23px", width: "23px" }} />
       </AnchorElem>
       <AnchorElem
         href="https://abhishek-shinde-portfolio-netlify.netlify.app/"
         target="noreferrer"
       >
-        <FaPortrait style={{ color: "white", height: "23px", width: "23px" }} />
+        <FaPortrait style={{ color: "black", height: "23px", width: "23px" }} />
       </AnchorElem>
     </StyledFooter>
   );

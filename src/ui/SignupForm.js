@@ -2,7 +2,7 @@ import { FaGoogle } from "react-icons/fa";
 import { MdLogin } from "react-icons/md";
 
 import styled from "styled-components";
-import useType from "../hooks/useType";
+
 import toast from "react-hot-toast";
 
 import "./signupform.css";
@@ -30,20 +30,10 @@ const StyledBtnContainer = styled.div`
   gap: 1rem;
 `;
 
-const StyledButton = styled.button`
-  padding: 10px;
-  background-color: transparent;
-  color: white;
-  border: 1px solid white;
-  border-radius: 4px;
-  cursor: pointer;
-  transition-duration: 1s;
-`;
-
 const StyledSignupGoogleBtn = styled.button`
   background-color: transparent;
-  color: white;
-  border: 1px solid white;
+  color: black;
+  border: 1px solid black;
   border-radius: 4px;
   padding: 4px;
   width: 50%;
@@ -59,7 +49,7 @@ const StyledPara1 = styled.p`
 `;
 
 const StyledPara2 = styled.p`
-  color: white;
+  color: black;
   width: 100%;
   text-align: center;
   border-bottom: 1px solid white;
@@ -131,24 +121,6 @@ export default function SignupForm({
 
   return (
     <StyledContainer>
-      <StyledBtnContainer>
-        {/* <StyledButton
-          onClick={function () {
-            setType("User");
-          }}
-          id={`${type === "User" ? "active1" : ""}`}
-        >
-          Signup as User
-        </StyledButton>
-        <StyledButton
-          onClick={function () {
-            setType("Admin");
-          }}
-          id={`${type === "Admin" ? "active2" : ""}`}
-        >
-          Signup as Admin
-        </StyledButton> */}
-      </StyledBtnContainer>
       <StyledSignupGoogleBtn
         onClick={function () {
           if (!type) {
