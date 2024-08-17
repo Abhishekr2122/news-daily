@@ -18,7 +18,7 @@ export default function SignupInput({
 }) {
   return (
     <div className="signup-input">
-      <label>{labelContent}</label>
+      <label className="label">{labelContent}</label>
       <input
         id={id}
         type={inputType}
@@ -33,6 +33,7 @@ export default function SignupInput({
           },
           validate: validateFunction,
         })}
+        className="input"
       />
       {errors[registerValue]?.message ? errors[registerValue]?.message : ""}
     </div>

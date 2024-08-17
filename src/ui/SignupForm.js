@@ -109,11 +109,12 @@ export default function SignupForm({
               reset();
               toast.success("Signup process completed");
             }
-          } else {
-            signupData({ ...data, type });
-            reset();
-            toast.success("Signup process completed");
           }
+          // else {
+          //   signupData({ ...data, type });
+          //   reset();
+          //   toast.success("Signup process completed");
+          // }
         }
       });
     }

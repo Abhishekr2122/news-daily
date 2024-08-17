@@ -1,8 +1,8 @@
 import { createClient } from "@supabase/supabase-js";
 
 import ForgetPassword from "./pages/password/ForgetPassword";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+// import Login from "../src/pages/login/Login";
+import Signup from "../src/pages/signup/Signup";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Password from "./pages/password/Password";
 import SetPassword from "./pages/password/SetPassword";
@@ -19,7 +19,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
+        {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/password" element={<ForgetPassword />}>
           <Route index element={<Password />} />
           <Route path="resetpassword" element={<SetPassword />} />

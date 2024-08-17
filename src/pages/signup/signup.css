@@ -1,0 +1,23 @@
+.signup {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to bottom, #b9def1 0%, #fcf5d9 100%);
+}
+
+.signup-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.form-action-btn {
+  padding: 6px 8px;
+  background-color: transparent;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 4px;
+}
