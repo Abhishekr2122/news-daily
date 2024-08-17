@@ -10,14 +10,39 @@
 .signup-btn-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  /* justify-content: center; */
+  gap: 30px;
 }
 
 .form-action-btn {
-  padding: 6px 8px;
-  background-color: transparent;
-  border: 1px solid black;
+  padding: 10px 16px;
+  /* background-color: #f6f6c6; */
+  background-color: white;
+
+  /* border: 1px solid black; */
+  border: transparent;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 2px;
+  transition-duration: 0.7s;
+  color: black;
+}
+
+.form-action-btn:hover {
+  background-color: aliceblue;
+  transition-duration: 0.7s;
+  border: transparent;
+}
+
+.signup-para {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 10px;
+}
+
+.login-btn {
+  background-color: transparent;
+  border: transparent;
+  text-decoration: underline;
+  cursor: pointer;
 }

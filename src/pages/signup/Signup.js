@@ -79,18 +79,14 @@ export default function Signup() {
           errors={errors}
         />
 
-        <p
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
+        <p className="signup-para">
           Haven't Loggedin yet?{" "}
           {isLogging ? (
             <Spinner />
           ) : (
-            <button onClick={handleLoginBtn}>Login</button>
+            <button onClick={handleLoginBtn} className="login-btn">
+              Login
+            </button>
           )}
         </p>
 

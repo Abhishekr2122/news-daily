@@ -15,6 +15,12 @@
   background-color: rgb(225, 242, 255);
   cursor: pointer;
   border-radius: 6px;
+  transition-duration: 0.7s;
+}
+
+.signup-google-btn:hover {
+  background-color: white;
+  transition-duration: 0.7s;
 }
 
 .signup-form-heading {
@@ -28,4 +34,16 @@
 
 .signup-form-sub-heading {
   font-weight: 400;
+}
+
+@media screen and (max-width: 465px) {
+  .signup-form-heading {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 362px) {
+  .signup-form-heading {
+    font-size: 22px;
+  }
 }

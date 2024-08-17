@@ -19,3 +19,29 @@
 .signup-form-sub-container {
   width: 75%;
 }
+
+@media screen and (max-width: 929px) {
+  .signup-form-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    /* border: 2px solid green; */
+  }
+
+  .signup-form {
+    width: 100%;
+    /* border: 1px solid black; */
+  }
+
+  .signup-form-sub-container {
+    /* border: 1px solid brown; */
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
