@@ -14,7 +14,7 @@ export default function SignupFormHeader() {
 
       <button className="signup-google-btn">
         <FcGoogle className="signup-google-btn-icon" />
-        <span style={{ fontSize: "medium" }}>Signup with Google</span>
+        <span className="signup-google-btn-text">Signup with Google</span>
         <MdLogin className="signup-google-btn-icon" />
       </button>
 

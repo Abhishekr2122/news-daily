@@ -1,6 +1,6 @@
 import BacktoLoginbtn from "./BacktoLoginbtn";
 import ContentContainer from "./ContentContainer";
-import FormConfirmbtn from "../../ui/FormConfirmbtn";
+// import FormConfirmbtn from "../../ui/FormConfirmbtn";
 import PasswordForm from "./PasswordForm";
 import PasswordHeading from "./PasswordHeading";
 import PasswordLogo from "./PasswordLogo";
@@ -25,7 +25,7 @@ export default function PasswordConfirm() {
       </div>
 
       <PasswordForm>
-        <FormConfirmbtn btnContent="Confirm" />
+        {/* <FormConfirmbtn btnContent="Confirm" /> */}
         <BacktoLoginbtn />
       </PasswordForm>
     </ContentContainer>

@@ -4,12 +4,12 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
-import inputValidation from "../../handlers/inputValidation";
-
 import Spinner from "../../ui/Spinner";
 import SignupImage from "../../ui/signup_components/SignupImage";
 import SignupForm from "../../ui/signup_components/SignupForm";
 import SignupInput from "../../ui/signup_components/SignupInput";
+
+import inputValidation from "../../handlers/inputValidation";
 
 export default function Signup() {
   const [isLogging, setIsLogging] = useState(false);
@@ -28,7 +28,12 @@ export default function Signup() {
   return (
     <div className="signup">
       <SignupImage />
-      <SignupForm handleSubmit={handleSubmit} reset={reset}>
+      <SignupForm
+        handleSubmit={handleSubmit}
+        reset={reset}
+        register={register}
+        errors={errors}
+      >
         <SignupInput
           labelContent="FirstName"
           inputType="text"

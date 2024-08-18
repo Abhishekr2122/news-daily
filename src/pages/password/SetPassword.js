@@ -1,6 +1,6 @@
 import BacktoLoginbtn from "./BacktoLoginbtn";
 import ContentContainer from "./ContentContainer";
-import FormConfirmbtn from "../../ui/FormConfirmbtn";
+// import FormConfirmbtn from "../../ui/FormConfirmbtn";
 import FormInput from "./FormInput";
 import PasswordForm from "./PasswordForm";
 import PasswordHeading from "./PasswordHeading";
@@ -47,7 +47,7 @@ export default function SetPassword() {
           placeholderValue="Re-enter your new password"
           inputType="password"
         />
-        <FormConfirmbtn btnContent="confirm" />
+        {/* <FormConfirmbtn btnContent="confirm" /> */}
         <BacktoLoginbtn />
       </PasswordForm>
     </ContentContainer>

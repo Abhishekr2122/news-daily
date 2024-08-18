@@ -5,7 +5,7 @@ import PasswordHeading from "./PasswordHeading";
 import PasswordSubHeading from "./PasswordSubHeading";
 import PasswordForm from "./PasswordForm";
 import FormInput from "./FormInput";
-import FormConfirmbtn from "../../ui/FormConfirmbtn";
+// import FormConfirmbtn from "../../ui/FormConfirmbtn";
 import BacktoLoginbtn from "./BacktoLoginbtn";
 import { useForm } from "react-hook-form";
 
@@ -32,7 +32,7 @@ export default function Password() {
           register={register}
         />
 
-        <FormConfirmbtn btnContent="Confirm" />
+        {/* <FormConfirmbtn btnContent="Confirm" /> */}
 
         <BacktoLoginbtn />
       </PasswordForm>

@@ -10,16 +10,15 @@
 .signup-btn-container {
   display: flex;
   align-items: center;
-  /* justify-content: center; */
+
   gap: 30px;
 }
 
 .form-action-btn {
   padding: 10px 16px;
-  /* background-color: #f6f6c6; */
+
   background-color: white;
 
-  /* border: 1px solid black; */
   border: transparent;
   cursor: pointer;
   border-radius: 2px;
@@ -36,7 +35,6 @@
 .signup-para {
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   gap: 10px;
 }
 

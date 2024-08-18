@@ -18,6 +18,10 @@
   transition-duration: 0.7s;
 }
 
+.signup-google-btn-text {
+  font-size: medium;
+}
+
 .signup-google-btn:hover {
   background-color: white;
   transition-duration: 0.7s;
@@ -25,6 +29,7 @@
 
 .signup-form-heading {
   font-weight: 500;
+  margin-top: 0px;
 }
 
 .signup-google-btn-icon {
@@ -42,8 +47,14 @@
   }
 }
 
-@media screen and (max-width: 362px) {
+@media screen and (max-width: 365px) {
   .signup-form-heading {
     font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .signup-google-btn-text {
+    font-size: small;
   }
 }
